@@ -1,0 +1,25 @@
+<launch>
+
+  <!-- Map Server -->
+  <node name="map_server" pkg="map_server" type="map_server" args="$(find roomba_2dnav)/map_wheel_odom.yaml"/>
+
+  <!-- Rtabmap Localization -->
+  <include file="$(find rtabmap_ros)/launch/rtabmap.launch">
+    <arg name="localization"      value="true" />
+    <arg name="visual_odometry"   value="false" />
+    <arg name="frame_id"          value="base_footprint" />
+     <arg name="odom_frame_id"    value="odom" />
+     <arg name="database_path"     value="~/.ros/rtabmap_wheel_odom.db" />
+     <arg name="cfg"    value="~/rtabmap.ini" />
+  </include>
+
+  <!-- move_base -->
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+    <rosparam file="$(find roomba_2dnav)/costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find roomba_2dnav)/costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find roomba_2dnav)/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find roomba_2dnav)/global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find roomba_2dnav)/base_local_planner_params.yaml" command="load" />
+  </node>
+ 
+</launch>

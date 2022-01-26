@@ -1,0 +1,5 @@
+  
+robot_base_frame: base_footprint
+robot_radius: 0.17
+always_send_full_costmap: true
+transform_tolerance: 0.5
