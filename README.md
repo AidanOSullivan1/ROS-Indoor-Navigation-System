@@ -41,7 +41,9 @@ The first step involved mapping the environment seen below. The robot was manual
 The obtained map from this process:
 ![Wheel_odom_map (1)](https://user-images.githubusercontent.com/86829520/151218846-9ce25291-2f7c-425d-9dfa-ccd7ab473cee.png)
 
-Next its localisation ability was tested by placing it in random parts of the mapped area to check how accurately it was capable of positioning itself. A satisfactory performace was achieved with only a 1.2% distance error using fused odometry.
+Next its localisation ability was tested by placing it in random parts of the mapped area to check how accurately it was capable of positioning itself. A satisfactory performace was achieved with only a 1.2% distance error using fused odometry:
+![robot_in_map (1)](https://user-images.githubusercontent.com/86829520/151371823-42423dc4-1a7e-4ee7-91de-f08102cf2ce3.png)
+
 
 
 
