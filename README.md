@@ -1,9 +1,10 @@
 # ROS-Indoor-Navigation-System
 This indooor navigation system required the following hardware:
 • IRobot Roomba 600 (publishes wheel odometry)
-• Raspberry Pi 4 model B
+• Raspberry Pi 4 model B (All SLAM and navigation carried out on-board without the use of external computation power.
 • Asus Xtion Pro Live RGBD camera
 • I built a custom voltage level shifter interface circuit, to facilitate serial communication between the Roomba and the Raspberry Pi (5V and 3.3V)
+• 20 Ah battery to enable several hours of run-time
 
 Choosing the OS to run on the Raspberry Pi:
 It was important that the OS supported the packages that would 
@@ -31,13 +32,16 @@ address /dev/ttyAMA1. This was used to communicate with the Roomba.
 Installing ROS:
 ROS Noetic was installed as it was a new version. All dependencies had to be installed beforehand. Roomba sensor information then needed to be published on ROS and velocity commands sent to the Roomba from ROS. It was configured to do so and controlled manually at first to gain familiarity with the odometry and other sensory data, as well as how the Roomba was controlled through sending data packets over the serial interface.
 
-RTABmap:
-This package was installed to enable SLAM. The configuration and launch files had to be altered and adapted to work with the existing hardware. This required familiarity to be gained with XML files. Extensive reading was carried out on the papers autrhored by the creator of this SLAM package ‪Mathieu Labbé to understand the inner workings of this visual SLAM package. This enabled effective usage of the package and aided with the extensive work carried out to configure the software to the existing hardware.
+RTABmap:This package was installed to enable SLAM. The configuration and launch files had to be altered and adapted to work with the existing hardware. This required familiarity to be gained with XML files. Extensive reading was carried out on the papers authored by the creator of this SLAM package ‪Mathieu Labbé, to understand the inner workings of this visual SLAM package. This enabled effective usage of the package and aided with the extensive work carried out to configure the software to the existing hardware and optimisie its performance.
 
 The first step involved mapping the environment seen below. The robot was manually driven around the environment to create the initial map and to develop its visual bag-of-words that would later help with localisation.
  
 ![image](https://user-images.githubusercontent.com/86829520/151217551-51ed2990-78cd-410c-a529-1bdd8cb1fb44.png)
 
+The obtained map from this process:
 ![Wheel_odom_map (1)](https://user-images.githubusercontent.com/86829520/151218846-9ce25291-2f7c-425d-9dfa-ccd7ab473cee.png)
+
+Next its localisation ability was tested by placing it in random parts of the mapped area to check how accurately it was capable of positioning itself. A satisfactory performace was achieved with only a 1.2% distance error using fused odometry.
+
 
 
