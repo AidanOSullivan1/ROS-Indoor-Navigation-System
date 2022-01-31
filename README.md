@@ -44,7 +44,7 @@ ROS Noetic was installed as it was a new version. All dependencies had to be ins
 
 RTABmap:
 
-This package was installed to enable SLAM. The configuration and launch files had to be altered and adapted to work with the existing hardware. This required familiarity to be gained with XML files. Extensive reading was carried out on the papers authored by the creator of this SLAM package ‪Mathieu Labbé, to understand the inner workings of this visual SLAM package. This enabled effective usage of the package and aided with the extensive work carried out to configure the software to the existing hardware and optimisie its performance, enabling the computationally heavy software to be ran with the limited power of the on-board Raspberry Pi.
+This package was installed to enable SLAM. The configuration and launch files had to be altered and adapted to work with the existing hardware. This required familiarity to be gained with XML files. Extensive reading was carried out on the papers authored by the creator of this SLAM package ‪Mathieu Labbé, to understand the inner workings of this visual SLAM software. This enabled effective usage of the package and aided with the extensive work carried out to configure the software to the existing hardware and optimisie its performance, enabling the computationally heavy software to be ran with the limited power of the on-board Raspberry Pi.
 
 The first step involved mapping the environment seen below. The robot was manually driven around the environment to create the initial map and to develop its visual bag-of-words that would later help with localisation.
  
