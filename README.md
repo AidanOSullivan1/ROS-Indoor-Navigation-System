@@ -1,5 +1,8 @@
 # ROS-Indoor-Navigation-System
+The research paper associated with this project is in the repository, I would recommend reading this paper to get a clear outline of the project.
 This indooor navigation system required the following hardware:
+
+The following text in the README file attempts to summarise the development of the navigation system. Please view the link to the Youtube video at the end of the file to observe the capabilities of the final system.
 
 • IRobot Roomba 600 (publishes wheel odometry)
 
