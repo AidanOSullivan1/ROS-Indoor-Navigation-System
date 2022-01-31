@@ -44,7 +44,7 @@ ROS Noetic was installed as it was a new version. All dependencies had to be ins
 
 RTABmap:
 
-This package was installed to enable SLAM. The configuration and launch files had to be altered and adapted to work with the existing hardware. This required familiarity to be gained with XML files. Extensive reading was carried out on the papers authored by the creator of this SLAM package ‪Mathieu Labbé, to understand the inner workings of this visual SLAM software. This enabled effective usage of the package and aided with the extensive work carried out to configure the software to the existing hardware and optimisie its performance, enabling the computationally heavy software to be ran with the limited power of the on-board Raspberry Pi.
+This package was installed to enable SLAM. The configuration and launch files had to be altered and adapted to work with the existing hardware. This required familiarity to be gained with XML files. Extensive reading was carried out on the papers authored by the creator of this SLAM package ‪Mathieu Labbé, to understand the inner workings of this visual SLAM software. This enabled effective usage of the package and aided with the extensive work carried out to configure the software to the existing hardware and optimise its performance, enabling the computationally heavy software to be ran with the limited power of the on-board Raspberry Pi.
 
 The first step involved mapping the environment seen below. The robot was manually driven around the environment to create the initial map and to develop its visual bag-of-words that would later help with localisation.
  
@@ -53,7 +53,7 @@ The first step involved mapping the environment seen below. The robot was manual
 The obtained map from this process:
 ![Wheel_odom_map (1)](https://user-images.githubusercontent.com/86829520/151218846-9ce25291-2f7c-425d-9dfa-ccd7ab473cee.png)
 
-Next its localisation ability was tested by placing it in random parts of the mapped area to check how accurately it was capable of positioning itself. A satisfactory performace was achieved with only a 1.2% distance error using fused odometry:
+Next its localisation ability was tested by placing it in random parts of the mapped area to check how accurately it was capable of positioning itself. A satisfactory performace was achieved with only a 1.2% distance error using fused odometry (Wheel and Visual odometry data):
 ![robot_in_map (1)](https://user-images.githubusercontent.com/86829520/151371823-42423dc4-1a7e-4ee7-91de-f08102cf2ce3.png)
 
 Navigation:
